@@ -1,5 +1,3 @@
-// Part 1: Refactoring Old Code
-
 // Part 2: Expanding Functionality
 
 let csvData = 'ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctors Assistant,26'
@@ -10,7 +8,7 @@ let rows = csvData.split('\n').map(row => row.split(','));
 //Instead of hard-coding four columns per row, expand your code to accept any number of columns. 
 // This should be calculated dynamically based on the first row of data.
 let columnCount = rows[0].length;
-console.log("Number of columns:" , columnCount)
+console.log("Number of columns:", columnCount)
 
 //Store your results in a two-dimensional array.
 let resultArray = rows.map(row => {
@@ -51,19 +49,18 @@ let result = data.slice(1).map(row => {
 
 console.log("Transform Data:", result)
 
-// ------Part 4: Sorting and Manipulating Data-----
-
+//Part 4: Sorting and Manipulating Data
 
 //Remove the last element from the sorted array.
 result.pop();
 
 //Insert the following object at index 1:
-result.splice(1, 0,{id: "48", name: "Barry", occupation: "Runner", age: "25"});
+result.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
 
 //Add the following object to the end of the array:
-result.push({id: "7", name: "Bilbo", occupation: "None", age: "111"})
+result.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
 
-console.log("manipulated data:" , result)
+console.log("manipulated data:", result)
 
 //use the values of each object within the array and the array’s length property to calculate the average age of the group. 
 // This calculation should be accomplished using a loop.
@@ -76,7 +73,7 @@ for (let i = 0; i < result.length; i++) {
 let averageAge = totalAge / result.length;
 console.log("Average Age:", averageAge)
 
-// Part 5: Full Circle
+//Part 5: Full Circle
 
 //step 1 Extract headers
 let csvHeaders = Object.keys(result[0]).map(header => header.charAt(0).toUpperCase() + header.slice(1));
